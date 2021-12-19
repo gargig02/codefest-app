@@ -9,9 +9,16 @@
           :key="i"
           :style="tabStyle(i)"
         >
-          <div :class="$style.tabTitle" @click="toggleTab(i)" :id="tab.title">
+          <svg>
+            <polygon points="0,20 60,20 70,0 10,0" fill="none" stroke="white" stroke-width="1">
+            </polygon>
+            <foreignObject x="20" y="2" width="40" height="20">
+              <p @click="toggleTab(i)" :id="tab.title">
             {{ tab.title }}
-          </div>
+              </p>
+            </foreignObject>
+          </svg>
+          
         </div>
       </div>
     </div>
@@ -102,19 +109,14 @@ $tab-height = 30px;
       top: 0;
 
       .tabTitle {
-        z-index: 20;
         cursor: pointer;
-        background: var(--dark-shadow-color);
         font: 12pt 'Roboto Slab';
-        font-weight: 600;
-        clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
-        height: $tab-height;
-        line-height: 30px;
-        width: $tab-width;
+        font-size: small;
         text-align: center;
-        color: var(--text-color);
+        color: white;
       }
     }
+
 
     .active {
       .tabTitle {
@@ -123,6 +125,13 @@ $tab-height = 30px;
         z-index: 25;
       }
     }
+  }
+
+  p {
+    cursor: pointer;
+    margin: 0px;
+    font-size: small;
+    color: white;
   }
 
   .panelsContainer {

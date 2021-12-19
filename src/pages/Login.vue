@@ -11,28 +11,47 @@
               :height="10"
               :class="$style.loader"
             />
-            <form :class="$style.form" @submit.prevent="emailLogin">
+            <form @submit.prevent="emailLogin">
               <div :class="$style.fieldContainer">
-                <label for="email" :class="$style.label">E-mail</label>
-                <input
-                  type="email"
-                  :class="$style.field"
-                  v-model="email"
-                  required
-                />
-                <br />
-                <label for="password" :class="$style.label">Password</label>
-                <span :class="$style.fieldWrapper">
-                  <input
-                    type="password"
-                    :class="$style.field"
-                    v-model="password"
-                    id="login__password"
-                    pattern=".{6,}"
-                    title="Must be greater than 6 letters."
-                    required
-                  />
-                  <i
+                <!---<label for="email" :class="$style.label">E-mail</label>--->
+                <ul>
+                  <li>
+                    <div :class="$style.field">
+                      <svg>
+                        <defs>
+                          <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                          <stop offset="0%" style="stop-color:rgb(7,249,254);stop-opacity:0.1" />
+                          <stop offset="100%" style="stop-color:rgb(7,249,254);stop-opacity:0.2" />
+                          </radialGradient>
+                        </defs>
+                        <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)"              points="0,32 0,52 200,52 220,32 220,12 20,12" >
+                        </polygon>
+                        <foreignObject x="0" y="12" width="220" height="40">
+                          <input type="email"
+                                v-model="email"
+                                required
+                                placeholder="Email"/>
+                        </foreignObject>
+                      </svg>
+                    </div>
+                <!---<br />--->
+                <!---<label for="password" :class="$style.label">Password</label>--->
+                <!---<span :class="$style.fieldWrapper">--->
+                    <div :class="$style.field">
+                      <svg>
+                        <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)" points="0,32 0,52 200,52 220,32 220,12 20,12"></polygon>
+                        <foreignObject x="0" y="12" width="220" height="40">
+                          <input type="password"
+                                v-model="password"
+                                id="login__password"
+                                pattern=".{6,}"
+                                title="Must be greater than 6 letters."
+                                required
+                                placeholder="Password" />
+                        </foreignObject>
+                      </svg>
+                    </div>
+                  <!---<i
                     class="fas"
                     :class="
                       isPasswordVisible('login__password')
@@ -40,17 +59,32 @@
                         : 'fa-eye-slash'
                     "
                     @click="togglePasswordVisibility('login__password')"
-                  ></i>
+                  ></i>--->
                 </span>
-              </div>
+              </li>
+
+              <li>
+                  <svg>
+                <line id="line1" stroke="#07F9FE" stroke-width="1" x1="123" y1="6" x2="200" y2="6"></line>
+                <circle cx="205" cy="6" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)" points="40,32 40,52 160,52 180,32 180,12 60,12"></polygon>
+              <foreignObject :class="$style.btn" x="60" y="22" width="100" height="20">
+                <a href="#"><b>Login</b></a>
+              </foreignObject>
+                <polyline points="100,60 160,60 188,33 235,33" fill="none" stroke="#07F9FE" stroke-width="1"></polyline>
+                <circle cx="240" cy="33" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>  
+              </svg>
+              </li>
+
+              <li>
+              
               <div :class="$style.forgotPasswd">
                 <router-link to="/password/reset">Forgot Password?</router-link>
               </div>
-              <div :class="$style.btnStyle">
-                <button value=">" :class="$style.submit">
-                  <i class="fas fa-arrow-circle-right"></i>
-                </button>
-              </div>
+              </li>
+
+            </ul>
+            </div>
             </form>
             <div :class="$style.social">
               <button @click="googleLogin" :class="$style.socialButton">
@@ -65,6 +99,10 @@
             </div>
           </div>
 
+
+
+
+
           <div :class="$style.formContainer" slot="register">
             <BarLoader
               :loading="loading"
@@ -72,7 +110,150 @@
               :height="10"
               :class="$style.loader"
             />
-            <form :class="$style.form" @submit.prevent="emailRegister">
+
+          <form @submit.prevent="emailRegister">
+            <div :class="$style.fieldContainer">
+              <ul>
+                <li>
+        
+                  <div :class="$style.field">
+                <svg>
+                  <defs>
+                    <radialGradient id="grad2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                    <stop offset="0%" style="stop-color:rgb(7,249,254);stop-opacity:0.1" />
+                    <stop offset="100%" style="stop-color:rgb(7,249,254);stop-opacity:0.2" />
+                    </radialGradient>
+                  </defs>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)"              points="0,32 0,52 200,52 220,32 220,12 20,12" >
+                </polygon>
+                <foreignObject x="0" y="12" width="220" height="40">
+                    <input type="text"
+                  id="name"
+                  name="name"
+                  v-model="name"
+                  placeholder="Name"
+                  required>
+                </foreignObject>
+                 </svg>
+               </div>
+                  
+              <div :class="$style.field">
+                <svg>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="0,32 0,52 200,52 220,32 220,12 20,12"></polygon>
+              <foreignObject x="0" y="12" width="220" height="40">
+                <input type="email"
+                  id="email"
+                  name="email"
+                  v-model="email"
+                  placeholder="Email"
+                  required>
+              </foreignObject>
+                </svg>
+              </div>
+                  
+                </li>
+                
+                <li>
+                  
+                  <div :class="$style.field">
+                <svg>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)"            points="0,32 0,52 200,52 220,32 220,12 20,12" />
+                <foreignObject x="0" y="12" width="220" height="40">
+                  <input type="password"
+                    v-model="password"
+                    id="register__password"
+                    pattern=".{6,}"
+                    title="Must be greater than 6 letters."
+                    required
+                    placeholder="Password">
+                  <!---<i
+                    class="fas"
+                    :class="
+                      isPasswordVisible('register__password')
+                        ? 'fa-eye'
+                        : 'fa-eye-slash'
+                    "
+                    @click="togglePasswordVisibility('register__password')"
+                  ></i>--->
+                </foreignObject>
+                 </svg>
+               </div>
+                  
+              <div :class="$style.field">
+                <svg>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="0,32 0,52 200,52 220,32 220,12 20,12"></polygon>
+              <foreignObject x="0" y="12" width="220" height="40">
+                <input type="text"
+                  id="phone"
+                  name="phone"
+                  v-model="Phone"
+                  placeholder="Phone">
+              </foreignObject>
+                </svg>
+              </div>
+                  </li>
+                
+                <li>        
+                  <div :class="$style.field">
+                <svg>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)"              points="0,32 0,52 200,52 220,32 220,12 20,12" />
+                <foreignObject x="0" y="12" width="220" height="40">
+                  <input type="text"
+                  id="gender"
+                  name="gender"
+                  v-model="gender"
+                  placeholder="Gender">
+                </foreignObject>
+                 </svg>
+               </div>
+                  
+              <div :class="$style.field">
+                <svg>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="0,32 0,52 200,52 220,32 220,12 20,12"></polygon>
+              <foreignObject x="0" y="12" width="220" height="40">
+                <input type="text"
+                  id="country"
+                  name="country"
+                  v-model="country"
+                  placeholder="Country">
+              </foreignObject>
+                </svg>
+              </div>
+             </li>
+                
+                <li>
+                  <svg>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="0,32 0,52 200,52 220,32 220,12 20,12"></polygon>
+              <foreignObject x="0" y="12" width="220" height="40">
+                <input type="text"
+                  id="xyz"
+                  name="xyz"
+                  v-model="xyz"
+                  placeholder="You are a">
+              </foreignObject>
+                </svg>
+                </li>
+                
+                <li>
+                  <svg>
+                <line id="line1" stroke="#07F9FE" stroke-width="1" x1="123" y1="6" x2="200" y2="6"></line>
+                <circle cx="205" cy="6" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="40,32 40,52 160,52 180,32 180,12 60,12"></polygon>
+              <foreignObject :class="$style.btn" x="60" y="22" width="100" height="20">
+                <a href="#"><b>Register</b></a>
+              </foreignObject>
+                <polyline points="100,60 160,60 188,33 235,33" fill="none" stroke="#07F9FE" stroke-width="1"></polyline>
+                <circle cx="240" cy="33" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>  
+              </svg>
+              </li>
+            </ul>
+            </div>
+          </form>
+
+
+
+
+            <!---<form :class="$style.form" @submit.prevent="emailRegister">
               <div :class="$style.fieldContainer">
                 <label for="name" :class="$style.label">Name</label>
                 <input
@@ -121,7 +302,7 @@
                   <i class="fas fa-arrow-circle-right"></i>
                 </button>
               </div>
-            </form>
+            </form>--->
             <div :class="$style.social">
               <button @click="googleLogin" :class="$style.socialButton">
                 <img src="@assets/social/google.png" />
@@ -161,6 +342,10 @@ export default {
       name: "",
       email: "",
       password: "",
+      phone: "",
+      gender: "",
+      country: "",
+      xyz: "",
       referral: this.$route.query.referral || "",
       tabs: [
         {
@@ -337,23 +522,81 @@ export default {
 
 @require '~@styles/anims';
 
+main {
+  background-color: rgb(1,0,13);
+}
+
+form{
+  position: relative;
+  margin: auto;
+  border: 1px solid #07F9FE;
+  background: radial-gradient(circle, rgba(7, 249, 254, 0.2), rgba(7, 249, 254, 0.1));
+}
+
+.fieldContainer{
+  postion: relative;
+  margin: auto;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.field{
+  display: inline;
+  text-align: center;
+}
+svg {
+  width: 250px;
+  height: 60px;
+}
+
+foreignObject div {
+  height: 40px;
+  padding: 0px;
+  margin: 0px;
+  display: inline-block;
+}
+
+.btn a {
+  color: #07F9FE;
+  text-decoration: none;  
+}
+
+input {
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  background: none;
+  text-align: left;
+  color: #07F9FE;
+  padding-left: 20px;
+}
+
+form ::placeholder{
+  color: #07F9FE;
+  opacity: 1;
+}
+
 .authContainer {
   $font-size: 16px;
   font-family: courier, monospace;
   max-width: 600px;
   margin: auto;
   width: 100%;
+
 }
 
 .wrapper {
-  width: 80%;
-  margin: 0 auto;
   padding: 200px 0;
   position: relative;
   top: 0;
   z-index: 1;
   font-family: 'Roboto Slab';
   $font-size: 18px;
+
 }
 
 .root {
@@ -362,26 +605,14 @@ export default {
 
 .formContainer {
 
-  background-color: var(--background-color);
-  box-shadow: var(--inset-box-shadow);
-  .loader {
-    width: 100%;
-    position: absolute;
-    top: 0;
-  }
-
-  padding-bottom: 25px;
+  background-color: rgb(1,0,13);
 }
 
-.form {
-  margin: 50px;
-}
-
-.fieldContainer {
+/* .fieldContainer {
   width: 100%;
   margin-bottom: 20px;
   text-align: right;
-}
+} 
 
 .field {
   clear: both;
@@ -397,7 +628,7 @@ export default {
   border-radius: 5px;
   padding-left: 5px;
   margin-bottom: 20px;
-}
+} */
 
 .label {
   float: left;
@@ -423,18 +654,15 @@ export default {
 
 .forgotPasswd {
   width: 100%;
-  text-align: right;
-  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 220px;
+  font-size: small; 
+}
 
-  a {
-    color: $waterloo;
-    font-family: 'Roboto Slab';
-    font-weight: 600;
 
-    &:hover {
-      color: var(--text-color);
-    }
-  }
+.forgotPasswd a{
+  color: #07F9FE;
+  text-decoration: none;
 }
 
 .btnStyle {
