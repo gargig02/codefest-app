@@ -77,16 +77,36 @@
               </li>
 
               <li>
-              
               <div :class="$style.forgotPasswd">
                 <router-link to="/password/reset">Forgot Password?</router-link>
               </div>
               </li>
 
+              <li :class="$style.liSocial">
+                <svg>
+                  <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)" points="0,42 0,72 220,72 250,42 250,12 30,12"></polygon>
+                  <foreignObject x="0" y="0" width="100%" height="100%">
+                    <div :class="$style.social">
+                      <button @click="googleLogin" :class="$style.socialButton">
+                        <img src="@assets/social/google.png" />
+                      </button>
+                      <button @click="fbLogin" :class="$style.socialButton">
+                        <img src="@assets/social/facebook.png" />
+                      </button>
+                      <button @click="gitHubLogin" :class="$style.socialButton">
+                        <img :src="githubImageUrl" />
+                      </button>
+                    </div>
+                  </foreignObject>
+                </svg>
+              </li>
+
+
             </ul>
             </div>
             </form>
-            <div :class="$style.social">
+
+            <!---<div :class="$style.social">
               <button @click="googleLogin" :class="$style.socialButton">
                 <img src="@assets/social/google.png" />
               </button>
@@ -96,7 +116,7 @@
               <button @click="gitHubLogin" :class="$style.socialButton">
                 <img :src="githubImageUrl" />
               </button>
-            </div>
+            </div>--->
           </div>
 
 
@@ -246,6 +266,7 @@
                 <circle cx="240" cy="33" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>  
               </svg>
               </li>
+
             </ul>
             </div>
           </form>
@@ -302,7 +323,7 @@
                   <i class="fas fa-arrow-circle-right"></i>
                 </button>
               </div>
-            </form>--->
+            </form>
             <div :class="$style.social">
               <button @click="googleLogin" :class="$style.socialButton">
                 <img src="@assets/social/google.png" />
@@ -313,7 +334,7 @@
               <button @click="gitHubLogin" :class="$style.socialButton">
                 <img :src="githubImageUrl" />
               </button>
-            </div>
+            </div>--->
           </div>
         </TabLayout>
       </div>
@@ -531,6 +552,7 @@ form{
   margin: auto;
   border: 1px solid #07F9FE;
   background: radial-gradient(circle, rgba(7, 249, 254, 0.2), rgba(7, 249, 254, 0.1));
+  
 }
 
 .fieldContainer{
@@ -548,9 +570,10 @@ ul {
   display: inline;
   text-align: center;
 }
+
 svg {
   width: 250px;
-  height: 60px;
+  height: 80px;
 }
 
 foreignObject div {
@@ -572,7 +595,7 @@ input {
   background: none;
   text-align: left;
   color: #07F9FE;
-  padding-left: 20px;
+  padding-left: 30px;
 }
 
 form ::placeholder{
@@ -605,7 +628,7 @@ form ::placeholder{
 
 .formContainer {
 
-  background-color: rgb(1,0,13);
+  background-color: black;
 }
 
 /* .fieldContainer {
@@ -686,18 +709,17 @@ form ::placeholder{
   }
 }
 
+.liSocial {
+  text-align: left;
+  padding-left: 160px;
+}
+
 .social {
   width: 100%;
   max-width: 600px;
-  margin: auto;
+  margin-top: 10px;
   text-align: center;
-  padding: 5px;
-  margin-top: 20px;
   border: 0;
-  background-color: var(--background-color);
-  box-shadow: var(--icon-shadow);
-  width: 60%;
-  border-radius: 30px 0;
 
   .socialButton {
     background-color: Transparent;
