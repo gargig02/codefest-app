@@ -7,17 +7,7 @@ Vue.use(Router);
 const router = new Router({
   mode: "history",
   routes: [
-    {
-      name: "~/form",
-      path: "/form",
-      component: () => import(`@pages/form`),
-      meta: {
-        title: "test-form",
-        metaTags: [],
-        noTerminal: false,
-        animateTerminal: true,
-      },
-    },
+    
     {
       name: "~",
       path: "/",
