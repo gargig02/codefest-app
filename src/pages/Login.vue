@@ -16,7 +16,7 @@
                 <!---<label for="email" :class="$style.label">E-mail</label>--->
                 <ul>
                   <li>
-                    <div :class="$style.field">
+                    <div :class="$style.field_left">
                       <svg>
                         <defs>
                           <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
@@ -24,7 +24,7 @@
                           <stop offset="100%" style="stop-color:rgb(7,249,254);stop-opacity:0.2" />
                           </radialGradient>
                         </defs>
-                        <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)"              points="0,32 0,52 200,52 220,32 220,12 20,12" >
+                        <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)"              points="0,32 0,52 260,52 280,32 280,12 20,12" >
                         </polygon>
                         <foreignObject x="0" y="12" width="220" height="40">
                           <input type="email"
@@ -37,9 +37,9 @@
                 <!---<br />--->
                 <!---<label for="password" :class="$style.label">Password</label>--->
                 <!---<span :class="$style.fieldWrapper">--->
-                    <div :class="$style.field">
+                    <div :class="$style.field_right">
                       <svg>
-                        <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)" points="0,32 0,52 200,52 220,32 220,12 20,12"></polygon>
+                        <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)" points="0,32 0,52 260,52 280,32 280,12 20,12"></polygon>
                         <foreignObject x="0" y="12" width="220" height="40">
                           <input type="password"
                                 v-model="password"
@@ -60,19 +60,18 @@
                     "
                     @click="togglePasswordVisibility('login__password')"
                   ></i>--->
-                </span>
               </li>
 
               <li>
                   <svg>
-                <line id="line1" stroke="#07F9FE" stroke-width="1" x1="123" y1="6" x2="200" y2="6"></line>
-                <circle cx="205" cy="6" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>
-                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)" points="40,32 40,52 160,52 180,32 180,12 60,12"></polygon>
-              <foreignObject :class="$style.btn" x="60" y="22" width="100" height="20">
+                <line id="line1" stroke="#07F9FE" stroke-width="1" x1="153" y1="6" x2="230" y2="6"></line>
+                <circle cx="235" cy="6" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)" points="40,37 40,62 185,62 210,37 210,12 65,12"></polygon>
+              <foreignObject :class="$style.btn" x="60" y="28" width="130" height="20">
                 <a href="#"><b>Login</b></a>
               </foreignObject>
-                <polyline points="100,60 160,60 188,33 235,33" fill="none" stroke="#07F9FE" stroke-width="1"></polyline>
-                <circle cx="240" cy="33" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>  
+                <polyline points="100,68 185,68 216,37 265,37" fill="none" stroke="#07F9FE" stroke-width="1"></polyline>
+                <circle cx="270" cy="37" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>  
               </svg>
               </li>
 
@@ -84,17 +83,18 @@
 
               <li :class="$style.liSocial">
                 <svg>
-                  <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)" points="0,42 0,72 220,72 250,42 250,12 30,12"></polygon>
-                  <foreignObject x="0" y="0" width="100%" height="100%">
+                  <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)" points="0,32 0,52 150,52 170,32 170,12 20,12"></polygon>
+                  <foreignObject x="0" y="0" width="170" height="100%">
                     <div :class="$style.social">
                       <button @click="googleLogin" :class="$style.socialButton">
-                        <img src="@assets/social/google.png" />
+                        <i class="fab fa-google" style="font-size:20px;color:rgb(7,249,254); "></i>
                       </button>
                       <button @click="fbLogin" :class="$style.socialButton">
-                        <img src="@assets/social/facebook.png" />
+                        <i class="fab fa-facebook-f" style="font-size:20px;color:rgb(7,249,254);"></i>
+
                       </button>
                       <button @click="gitHubLogin" :class="$style.socialButton">
-                        <img :src="githubImageUrl" />
+                        <i class="fab fa-github" style="font-size:20px;color:rgb(7,249,254);"></i>
                       </button>
                     </div>
                   </foreignObject>
@@ -552,6 +552,7 @@ form{
   margin: auto;
   border: 1px solid #07F9FE;
   background: radial-gradient(circle, rgba(7, 249, 254, 0.2), rgba(7, 249, 254, 0.1));
+  width: 100%;
   
 }
 
@@ -564,6 +565,12 @@ form{
 ul {
   list-style-type: none;
   padding: 0px;
+}
+
+li {
+  width: 100%;
+  min-height: 15px;
+  overflow: auto;
 }
 
 .field{
