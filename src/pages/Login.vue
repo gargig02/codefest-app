@@ -2,6 +2,8 @@
   <div :class="$style.root">
     <AppBar />
     <main :class="$style.wrapper">
+      <div><img :class="$style.cf_logo" src="assets/cf-chartreuse-logo.svg" width="50px" height="50px" />
+      </div> 
       <div :class="$style.authContainer">
         <TabLayout :tabs="tabs" @onToggleTab="onToggleTab">
           <div :class="$style.formContainer" slot="login">
@@ -27,7 +29,7 @@
                         <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)"              points="0,32 0,52 260,52 280,32 280,12 20,12" >
                         </polygon>
                         <foreignObject x="0" y="12" width="220" height="40">
-                          <input type="email"
+                          <input :class="$style.cur" type="email"
                                 v-model="email"
                                 required
                                 placeholder="Email"/>
@@ -41,7 +43,7 @@
                       <svg>
                         <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)" points="0,32 0,52 260,52 280,32 280,12 20,12"></polygon>
                         <foreignObject x="0" y="12" width="220" height="40">
-                          <input type="password"
+                          <input :class="$style.cur" type="password"
                                 v-model="password"
                                 id="login__password"
                                 pattern=".{6,}"
@@ -68,7 +70,7 @@
                 <circle cx="235" cy="6" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>
                 <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad1)" points="40,37 40,62 185,62 210,37 210,12 65,12"></polygon>
               <foreignObject :class="$style.btn" x="60" y="28" width="130" height="20">
-                <a href="#"><b>Login</b></a>
+                <a href="#">Login</a>
               </foreignObject>
                 <polyline points="100,68 185,68 216,37 265,37" fill="none" stroke="#07F9FE" stroke-width="1"></polyline>
                 <circle cx="270" cy="37" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>  
@@ -136,7 +138,7 @@
               <ul>
                 <li>
         
-                  <div :class="$style.field">
+                  <div :class="$style.field_left">
                 <svg>
                   <defs>
                     <radialGradient id="grad2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
@@ -144,10 +146,10 @@
                     <stop offset="100%" style="stop-color:rgb(7,249,254);stop-opacity:0.2" />
                     </radialGradient>
                   </defs>
-                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)"              points="0,32 0,52 200,52 220,32 220,12 20,12" >
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)"              points="0,32 0,52 260,52 280,32 280,12 20,12" >
                 </polygon>
                 <foreignObject x="0" y="12" width="220" height="40">
-                    <input type="text"
+                    <input :class="$style.cur"  type="text"
                   id="name"
                   name="name"
                   v-model="name"
@@ -157,11 +159,11 @@
                  </svg>
                </div>
                   
-              <div :class="$style.field">
+              <div :class="$style.field_right">
                 <svg>
-                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="0,32 0,52 200,52 220,32 220,12 20,12"></polygon>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="0,32 0,52 260,52 280,32 280,12 20,12"></polygon>
               <foreignObject x="0" y="12" width="220" height="40">
-                <input type="email"
+                <input :class="$style.cur" type="email"
                   id="email"
                   name="email"
                   v-model="email"
@@ -175,11 +177,11 @@
                 
                 <li>
                   
-                  <div :class="$style.field">
+                  <div :class="$style.field_left">
                 <svg>
-                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)"            points="0,32 0,52 200,52 220,32 220,12 20,12" />
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)"            points="0,32 0,52 260,52 280,32 280,12 20,12" />
                 <foreignObject x="0" y="12" width="220" height="40">
-                  <input type="password"
+                  <input :class="$style.cur" type="password"
                     v-model="password"
                     id="register__password"
                     pattern=".{6,}"
@@ -199,11 +201,11 @@
                  </svg>
                </div>
                   
-              <div :class="$style.field">
+              <div :class="$style.field_right">
                 <svg>
-                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="0,32 0,52 200,52 220,32 220,12 20,12"></polygon>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="0,32 0,52 260,52 280,32 280,12 20,12"></polygon>
               <foreignObject x="0" y="12" width="220" height="40">
-                <input type="text"
+                <input :class="$style.cur" type="text"
                   id="phone"
                   name="phone"
                   v-model="Phone"
@@ -214,11 +216,11 @@
                   </li>
                 
                 <li>        
-                  <div :class="$style.field">
+                  <div :class="$style.field_left">
                 <svg>
-                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)"              points="0,32 0,52 200,52 220,32 220,12 20,12" />
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)"              points="0,32 0,52 260,52 280,32 280,12 20,12" />
                 <foreignObject x="0" y="12" width="220" height="40">
-                  <input type="text"
+                  <input :class="$style.cur" type="text"
                   id="gender"
                   name="gender"
                   v-model="gender"
@@ -227,11 +229,11 @@
                  </svg>
                </div>
                   
-              <div :class="$style.field">
+              <div :class="$style.field_right">
                 <svg>
-                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="0,32 0,52 200,52 220,32 220,12 20,12"></polygon>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="0,32 0,52 260,52 280,32 280,12 20,12"></polygon>
               <foreignObject x="0" y="12" width="220" height="40">
-                <input type="text"
+                <input :class="$style.cur" type="text"
                   id="country"
                   name="country"
                   v-model="country"
@@ -241,11 +243,11 @@
               </div>
              </li>
                 
-                <li>
+                <li :class="$style.field_center">
                   <svg>
-                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="0,32 0,52 200,52 220,32 220,12 20,12"></polygon>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="0,32 0,52 260,52 280,32 280,12 20,12"></polygon>
               <foreignObject x="0" y="12" width="220" height="40">
-                <input type="text"
+                <input :class="$style.cur" type="text"
                   id="xyz"
                   name="xyz"
                   v-model="xyz"
@@ -256,20 +258,20 @@
                 
                 <li>
                   <svg>
-                <line id="line1" stroke="#07F9FE" stroke-width="1" x1="123" y1="6" x2="200" y2="6"></line>
-                <circle cx="205" cy="6" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>
-                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="40,32 40,52 160,52 180,32 180,12 60,12"></polygon>
-              <foreignObject :class="$style.btn" x="60" y="22" width="100" height="20">
+                <line id="line1" stroke="#07F9FE" stroke-width="1" x1="153" y1="6" x2="230" y2="6"></line>
+                <circle cx="235" cy="6" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>
+                <polygon stroke="#07F9FE" stroke-width="2" fill="url(#grad2)" points="40,37 40,62 185,62 210,37 210,12 65,12"></polygon>
+              <foreignObject :class="$style.btn" x="60" y="28" width="130" height="20">
                 <a href="#"><b>Register</b></a>
               </foreignObject>
-                <polyline points="100,60 160,60 188,33 235,33" fill="none" stroke="#07F9FE" stroke-width="1"></polyline>
-                <circle cx="240" cy="33" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>  
+                <polyline points="100,68 185,68 216,37 265,37" fill="none" stroke="#07F9FE" stroke-width="1"></polyline>
+                <circle cx="270" cy="37" r="5" stroke="#07F9FE" stroke-width="1" fill="none"></circle>   
               </svg>
               </li>
 
             </ul>
             </div>
-          </form>
+          </form>--->
 
 
 
@@ -339,7 +341,7 @@
         </TabLayout>
       </div>
     </main>
-    <Footer />
+  <Footer/>
   </div>
 </template>
 
@@ -547,6 +549,12 @@ main {
   background-color: rgb(1,0,13);
 }
 
+.cf_logo {
+  float: right;
+  margin-top: -80px;
+  margin-right: 240px;
+}
+
 form{
   position: relative;
   margin: auto;
@@ -560,6 +568,7 @@ form{
   postion: relative;
   margin: auto;
   text-align: center;
+  width: 100%;
 }
 
 ul {
@@ -567,32 +576,44 @@ ul {
   padding: 0px;
 }
 
-li {
+/*li {
   width: 100%;
   min-height: 15px;
   overflow: auto;
+}*/
+
+.field_left{
+  display: inline;
+  float: left;
+  margin-left: 10%;
 }
 
-.field{
+.field_right{
   display: inline;
-  text-align: center;
+  float: right;
+  margin-right: 10%;
+}
+
+.field_center {
+  //padding-left: ;
 }
 
 svg {
-  width: 250px;
+  width: 280px;
   height: 80px;
 }
 
-foreignObject div {
+/* foreignObject div {
   height: 40px;
   padding: 0px;
   margin: 0px;
   display: inline-block;
-}
+} */
 
 .btn a {
   color: #07F9FE;
-  text-decoration: none;  
+  text-decoration: none;
+  font-weight:1000;
 }
 
 input {
@@ -603,19 +624,23 @@ input {
   text-align: left;
   color: #07F9FE;
   padding-left: 30px;
+  caret: #07F9FE underscore;
+}
+.cur{
 }
 
 form ::placeholder{
   color: #07F9FE;
   opacity: 1;
+  fon-weight: 750;
 }
 
 .authContainer {
   $font-size: 16px;
   font-family: courier, monospace;
-  max-width: 600px;
+  position: relative;
   margin: auto;
-  width: 100%;
+  width: 800px;
 
 }
 
@@ -634,7 +659,6 @@ form ::placeholder{
 }
 
 .formContainer {
-
   background-color: black;
 }
 
@@ -683,16 +707,18 @@ form ::placeholder{
 }
 
 .forgotPasswd {
-  width: 100%;
+  padding-left: 310px;
+  font-size: 17px; 
   text-align: left;
-  padding-left: 220px;
-  font-size: small; 
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 
 .forgotPasswd a{
   color: #07F9FE;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .btnStyle {
@@ -718,15 +744,16 @@ form ::placeholder{
 
 .liSocial {
   text-align: left;
-  padding-left: 160px;
+  padding-left: 300px;
 }
 
 .social {
   width: 100%;
   max-width: 600px;
-  margin-top: 10px;
+  margin-top: 7px;
   text-align: center;
   border: 0;
+  padding: 15px;
 
   .socialButton {
     background-color: Transparent;
@@ -735,6 +762,8 @@ form ::placeholder{
     cursor: pointer;
     overflow: hidden;
     outline: none;
+    padding: 0px 10px;
+
 
     img {
       margin: 10px;
